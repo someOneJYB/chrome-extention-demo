@@ -1,0 +1,39 @@
+{
+  "version": "0.0.1",
+  "name": "json-format",
+  "manifest_version": 2,
+  "description": "JSONFORMAT",
+  "browser_action": {
+    "default_title": "jsonformat"
+  },
+  "icons": {
+    "16": "img.png",
+    "48": "img.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "downloads",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["json.css"],
+      "js": ["main.js"],
+      "run_at" : "document_start"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["main.js"],
+      "run_at": "document_end"
+    }, {
+      "matches": ["*://*.iframe_src.com/*"],
+      "js": ["main.js"],
+      "run_at": "document_end",
+      "all_frames":true
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+}
