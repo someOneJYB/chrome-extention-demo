@@ -1,3 +1,4 @@
+// 触发background的chrome.runtime.onConnect.addListener
 var port = chrome.runtime.connect();
 
 

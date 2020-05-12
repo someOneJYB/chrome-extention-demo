@@ -41,5 +41,7 @@
 chrome.runtime.onConnect.addListener
 port.postMessage
 ```
+### 结果
+![5d44c464663b4a4b2b8b78e4bc2522fc](https://github.com/someOneJYB/chrome-extention-demo/raw/master/JSONFormat/exp.png)
 
 ###### 参考自 json-view 插件
